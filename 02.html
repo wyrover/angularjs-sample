@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html data-ng-app="">
+<head>
+    <title>循环数组</title>
+</head>
+
+<body>
+	<div class="container" data-ng-init="names=['Dave', 'Napur', 'Heedy', 'Shriva']">
+		<h3>Looping with the ng-repeat Directive</h3>
+		<ul>
+			<li data-ng-repeat="name in names">{{ name }}</li>
+		</ul>
+	</div>
+
+	<script src="angular.js"></script>
+</body>
+</html>
