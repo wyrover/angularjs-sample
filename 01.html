@@ -3,12 +3,62 @@
 <html ng-app>
 <head>
     <title>数据绑定</title>
+	<link href="bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap-theme.css" rel="stylesheet" />
 </head>
 
-<body>
+<body ng-init="count = 0">
 	<div class="container">
 		Name:<input type="text" ng-model="name" /> {{ name }}
 	</div>
+
+	<hr>
+
+	I can add: 1 + 2 = {{ 1 + 2 }}
+
+	<hr>
+
+	<p ng-show="true">This paragraph is visible.</p>
+    <p ng-show="false">This paragraph is hidden.</p> 
+
+	<hr>
+
+	<button ng-click="count = count + 1">Click Me</button>
+	cout: {{ count }}
+
+	<hr>
+
+	<button ng-click="display = !display">Toggle</button>
+	<p ng-show="display">Toggle Me!</p>
+
+	<hr>
+
+	<a class="btn btn-primary" ng-click="show=!show" ng-class="{'active': show}">
+		Click Me
+	</a>
+
+	<hr>
+
+	<ul class="nav nav-tabs">
+		<li ng-class="{active: i==1}" ng-click="i=1">
+		  <a href="#">Home</a>
+		</li>
+		<li ng-class="{active: i==2}" ng-click="i=2">
+		  <a href="#">Profile</a>
+		</li>
+		<li ng-class="{active: i==3}" ng-click="i=3">
+		  <a href="#">Messages</a>
+		</li>
+	</ul>
+
+	<hr>
+
+	<input type="text" ng-model="directivename" placeholder="name" />
+	<span ng-bind="directivename"></span>
+	<span ng:bind="directivename"></span>
+	<span ng_bind="directivename"></span>
+	<span x-ng-bind="directivename"></span>
+	<span data-ng-bind="directivename"></span>
 
 	<script src="angular.js"></script>
 </body>
